@@ -46,7 +46,7 @@ These forms should be defined in JSON and should be able to handle 3 kinds of co
   ```sh
   npm install -g @angular/cli
   ```
-  ![img.png](img.png)
+  ![img_5.png](img_5.png)
 
 ## Installation
 ### Backend `Only if you want to serve the formJSON object from the API)`
