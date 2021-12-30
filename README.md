@@ -70,7 +70,8 @@ These forms should be defined in JSON and should be able to handle 3 kinds of co
     ```sh 
     /DynamicForms/3fa85f64-5717-4562-b3fc-2c963f66afa6
     ```
-   
+* If you want to change the returning of this endpoint, have a look at  `FormInput.cs` file.
+
 ![readme/img_1.png](readme/img_1.png)
 <br />
 
