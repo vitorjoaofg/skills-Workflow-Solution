@@ -8,71 +8,12 @@ import {
   Output
 } from '@angular/core';
 import { AbstractControlOptions, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
-
-interface JsonFormValidators {
-  min?: number;
-  max?: number;
-  required?: boolean;
-  email?: boolean;
-  minLength?: boolean;
-  maxLength?: boolean;
-  pattern?: string;
-}
-
-interface JsonFormControlOptions {
-  min?: string;
-  max?: string;
-  step?: string;
-  icon?: string;
-}
-
-interface JsonFormControls {
-  name: string;
-  label: string;
-  value: string;
-  type: string;
-  options?: JsonFormControlOptions[];
-  required: boolean;
-  validators: JsonFormValidators;
-}
-
-export interface JsonFormData {
-  controls: JsonFormControls[];
-}
+import { JsonFormControls, JsonFormData } from "../../models/dynamic-form.model";
 
 @Component({
   selector: 'lib-dynamic-form',
-  template: `
-    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-      <ng-container *ngFor="let control of definition?.controls">
-        <mat-form-field
-          *ngIf="['text', 'password', 'email', 'number', 'search', 'tel', 'url'].includes(control.type)"
-          class="col-12"
-        >
-          <input [formControlName]="control.name" matInput placeholder="{{ control.label }}" /> </mat-form-field
-        ><br />
-
-        <mat-form-field *ngIf="control.type === 'select'" appearance="fill">
-          <mat-label>Favorite language</mat-label>
-          <mat-select [formControlName]="control.name">
-            <mat-option *ngFor="let opt of control.options" [value]="opt">
-              {{ opt }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-
-        <mat-selection-list *ngIf="control.type === 'list'" [formControlName]="control.name">
-          <mat-list-option *ngFor="let opt of control.options" [value]="opt">
-            {{ opt }}
-          </mat-list-option>
-        </mat-selection-list>
-      </ng-container>
-
-      <button mat-raised-button>Submit</button>
-    </form>
-  `,
-  styles: [
-  ],
+  templateUrl: './dynamic-form.component.html',
+  styleUrls: ['./dynamic-form.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DynamicFormComponent implements OnChanges {
