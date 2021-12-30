@@ -158,8 +158,9 @@ But if you want to generate a new version after some changes do the following:
       ]
     }
   ```
+<br />
 
-##Passing a custom JSON
+### Passing a custom JSON
 The demo project is configured to consume the JSON served by the .NET Core 6 RestAPI (so make sure your Backend application is running). `If you just want to pass a new JSON without needing the backend` , do the following
 1. Go to the `app.component.ts` (Parent Application) and change it:
 ```ts
