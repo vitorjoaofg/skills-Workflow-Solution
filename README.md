@@ -46,7 +46,7 @@ These forms should be defined in JSON and should be able to handle 3 kinds of co
   ```sh
   npm install -g @angular/cli
   ```
-  ![img_5.png](img_5.png)
+  ![readme/img_5.png](readme/img_5.png)
 
 ## Installation
 ### Backend `Only if you want to serve the formJSON object from the API)`
@@ -67,7 +67,7 @@ These forms should be defined in JSON and should be able to handle 3 kinds of co
    https://localhost:7269/swagger
    ```
    
-![img_1.png](img_1.png)
+![readme/img_1.png](readme/img_1.png)
 
 ### Frontend (Dynamic Form Library)
 There is already a package in the root project ready to be used
@@ -110,7 +110,7 @@ But if you want to generate a new version after some changes do the following:
 ```sh
     ng serve
   ```
-![img_2.png](img_2.png)
+![readme/img_2.png](readme/img_2.png)
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -172,7 +172,7 @@ To
   ```
 
 ## Getting the form validation and its values to use at Parent Component
-![img_3.png](img_3.png)
+![readme/img_3.png](readme/img_3.png)
 1. Create a onSubmit function and that's it :)
 ```ts
   onSubmit(dynamicForm: any) {
@@ -182,7 +182,7 @@ To
 ```
 2. Click on submit button
 
-![img_4.png](img_4.png)
+![readme/img_4.png](readme/img_4.png)
 3. Do what you want with the form (with validation and its values)
 
 See ya!! 
