@@ -123,7 +123,7 @@ To run the tests of the component
 1. ```sh
    npm test
    ```
-    ![img_2.png](img_2.png)
+    ![img_2.png](readme/img_test.png)
 
 <!-- USAGE EXAMPLES -->
 ## Usage
