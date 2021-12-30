@@ -118,6 +118,13 @@ But if you want to generate a new version after some changes do the following:
     ```
     ![readme/img_2.png](readme/img_2.png)
 
+## Testing
+To run the tests of the component
+1. ```sh
+   npm test
+   ```
+    ![img_2.png](img_2.png)
+
 <!-- USAGE EXAMPLES -->
 ## Usage
 ### All you have to do is pass a JSON to the library like this:
