@@ -106,7 +106,6 @@ But if you want to generate a new version after some changes do the following:
 ```html
       <lib-dynamic-form(onFormSubmit)="onSubmit($event)" [definition]="formJSON"></lib-dynamic-form>
   ```
-`*** The demo project is already set up to import the library into app.modules and also show the component at runtime ***`
 5. Test the application
 ```sh
     ng serve
@@ -160,8 +159,8 @@ But if you want to generate a new version after some changes do the following:
     }
   ```
 
-###Passing a custom JSON
-#### The demo project is configured to consume the JSON served by the .NET Core 6 RestAPI (so make sure your Backend application is running). `If you just want to pass a new JSON without needing the backend` , do the following
+##Passing a custom JSON
+The demo project is configured to consume the JSON served by the .NET Core 6 RestAPI (so make sure your Backend application is running). `If you just want to pass a new JSON without needing the backend` , do the following
 1. Go to the `app.component.ts` (Parent Application) and change it:
 ```ts
        restAPI = 'https://localhost:7269/DynamicForms/3fa85f64-5717-4562-b3fc-2c963f66afa6';
