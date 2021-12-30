@@ -66,110 +66,123 @@ These forms should be defined in JSON and should be able to handle 3 kinds of co
    ```link
    https://localhost:7269/swagger
    ```
+5. There is one available formJSON on the route: 
+    ```sh 
+    /DynamicForms/3fa85f64-5717-4562-b3fc-2c963f66afa6
+    ```
    
 ![readme/img_1.png](readme/img_1.png)
+<br />
 
 ### Frontend (Dynamic Form Library)
 There is already a package in the root project ready to be used
-  ```sh
-  dynamic-form-0.0.4.tgz
-  ```
+      ```sh
+      dynamic-form-0.0.4.tgz
+      ```
 But if you want to generate a new version after some changes do the following:
 
 1. Go to the root library folder
-  ```sh
-  cd lib-workspace/projects/dynamic-form/
-  ```
+      ```sh
+      cd lib-workspace/projects/dynamic-form/
+      ```
 2. Build the library to generate the dist folder
-```sh
-  ng build
-  ```
+    ```sh
+      ng build
+      ```
 3. Go to the /dist folder and run
-```sh
-  ng pack
-  ```
+    ```sh
+      ng pack
+      ```
 
 ### Frontend (Parent Application)
 1. Go to the angular-app-demo application folder
-```sh
-  cd angular-app-demo
-  ```
+    ```sh
+      cd angular-app-demo
+      ```
 2. Install the dependencies
-```sh
-  npm install
-  ```
+    ```sh
+      npm install
+      ```
 3. Install the Dynamic Library
-```sh
-  npm install dynamic-form-0.0.4.tgz
-  ```
+    ```sh
+      npm install dynamic-form-0.0.4.tgz
+      ```
 4. At this point you will be able to use the library as a directive
-```html
-      <lib-dynamic-form(onFormSubmit)="onSubmit($event)" [definition]="formJSON"></lib-dynamic-form>
-  ```
+    ```html
+          <lib-dynamic-form(onFormSubmit)="onSubmit($event)" [definition]="formJSON"></lib-dynamic-form>
+    ```
 5. Test the application
-```sh
-    ng serve
-  ```
-![readme/img_2.png](readme/img_2.png)
+    ```sh
+        ng serve
+    ```
+    ![readme/img_2.png](readme/img_2.png)
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 ### All you have to do is pass a JSON to the library like this:
-```ts
-    {
-      controls: [
+#### There are some formJSON available at:
+1. External site
+    ```sh
+        https://api.npoint.io/165c2313a64f8c49b80d
+    ```
+2. Provided by backend
+    ```sh 
+        /DynamicForms/3fa85f64-5717-4562-b3fc-2c963f66afa6
+    ```
+### formJSON example
         {
-          name: "firstName",
-          type: "text",
-          label: "First name:",
-          value: "",
-          validators: {
-            required: true,
-            minLength: 5
-          }
-        },
-        {
-          name: "languages",
-          type: "select",
-          label: "Language",
-          value: "Python",
-          options: [
-            "Python",
-            "C#",
-            "Angular",
-            "React"
-          ],
-          validators: {
-            required: true
-          }
-        },
-        {
-          name: "companies",
-          type: "list",
-          label: "Choose some comapanies",
-          value: "",
-          options: [
-            "Google",
-            "Amazon",
-            "PayPal"
-          ],
-          validators: { }
+          controls: [
+            {
+              name: "firstName",
+              type: "text",
+              label: "First name:",
+              value: "",
+              validators: {
+                required: true,
+                minLength: 5
+              }
+            },
+            {
+              name: "languages",
+              type: "select",
+              label: "Language",
+              value: "Python",
+              options: [
+                "Python",
+                "C#",
+                "Angular",
+                "React"
+              ],
+              validators: {
+                required: true
+              }
+            },
+            {
+              name: "companies",
+              type: "list",
+              label: "Choose some comapanies",
+              value: "",
+              options: [
+                "Google",
+                "Amazon",
+                "PayPal"
+              ],
+              validators: { }
+            }
+          ]
         }
-      ]
-    }
-  ```
 <br />
 
 ### Passing a custom JSON
 The demo project is configured to consume the JSON served by the .NET Core 6 RestAPI (so make sure your Backend application is running). `If you just want to pass a new JSON without needing the backend` , do the following
 1. Go to the `app.component.ts` (Parent Application) and change it:
 ```ts
-       restAPI = 'https://localhost:7269/DynamicForms/3fa85f64-5717-4562-b3fc-2c963f66afa6';
-  ```
-To
+    restAPI = 'https://localhost:7269/DynamicForms/3fa85f64-5717-4562-b3fc-2c963f66afa6';
+```
+####To
 ```ts
-       restAPI = '<pathToYourJSON>';
-  ```
+    restAPI = '<pathToYourJSON>';
+```
 
 ## Getting the form validation and its values to use at Parent Component
 ![readme/img_3.png](readme/img_3.png)
