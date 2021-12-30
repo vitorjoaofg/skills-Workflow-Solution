@@ -119,7 +119,7 @@ But if you want to generate a new version after some changes do the following:
     ![readme/img_2.png](readme/img_2.png)
 
 ## Testing
-To run the tests of the component
+To run the tests of the component `dynamic-form.component.spec.ts`
 1. ```sh
    npm test
    ```
