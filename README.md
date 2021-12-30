@@ -179,8 +179,8 @@ The demo project is configured to consume the JSON served by the .NET Core 6 Res
 ```ts
     restAPI = 'https://localhost:7269/DynamicForms/3fa85f64-5717-4562-b3fc-2c963f66afa6';
 ```
-####To
-```ts
+To
+```js
     restAPI = '<pathToYourJSON>';
 ```
 
