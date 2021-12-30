@@ -116,7 +116,7 @@ But if you want to generate a new version after some changes do the following:
 <!-- USAGE EXAMPLES -->
 ## Usage
 ### All you have to do is pass a JSON to the library like this:
-```json
+```ts
     {
       controls: [
         {
