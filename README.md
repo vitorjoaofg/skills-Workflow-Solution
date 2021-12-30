@@ -67,7 +67,7 @@ These forms should be defined in JSON and should be able to handle 3 kinds of co
    https://localhost:7269/swagger
    ```
    
-![img_1.png](img_1.png)   
+![img_1.png](img_1.png)
 
 ### Frontend (Dynamic Form Library)
 There is already a package in the root project ready to be used
