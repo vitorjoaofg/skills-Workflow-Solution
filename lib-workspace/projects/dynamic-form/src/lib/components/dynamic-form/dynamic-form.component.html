@@ -1,0 +1,27 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <ng-container *ngFor="let control of definition?.controls">
+    <mat-form-field
+      *ngIf="['text', 'password', 'email', 'number', 'search', 'tel', 'url'].includes(control.type)"
+      class="col-12"
+    >
+      <input [formControlName]="control.name" matInput placeholder="{{ control.label }}" /> </mat-form-field
+    ><br />
+
+    <mat-form-field *ngIf="control.type === 'select'" appearance="fill">
+      <mat-label>Favorite language</mat-label>
+      <mat-select [formControlName]="control.name">
+        <mat-option *ngFor="let opt of control.options" [value]="opt">
+          {{ opt }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-selection-list *ngIf="control.type === 'list'" [formControlName]="control.name">
+      <mat-list-option *ngFor="let opt of control.options" [value]="opt">
+        {{ opt }}
+      </mat-list-option>
+    </mat-selection-list>
+  </ng-container>
+
+  <button mat-raised-button>Submit</button>
+</form>
